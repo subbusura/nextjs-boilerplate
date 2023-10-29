@@ -13,4 +13,6 @@ const Button = memo(() => {
   return <button onClick={handleOnClick}>Hello World</button>;
 });
 
+Button.displayName = "Button";
+
 export default Button;

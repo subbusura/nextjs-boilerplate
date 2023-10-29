@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ManagedUIContext } from "@/contexts/ui.context";
-
+import NextAuthProvider from "@/contexts/NextAuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ManagedUIContext>{children}</ManagedUIContext>
+        <NextAuthProvider>
+          <ManagedUIContext>{children}</ManagedUIContext>
+        </NextAuthProvider>
       </body>
     </html>
   );
