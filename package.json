@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress": "cypress open",
+    "analyze": "ANALYZE=true next build",
+    "e2e": "start-server-and-test dev http://localhost:3000 \"cypress open\"",
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e\"",
+    "component": "cypress open --component",
+    "component:headless": "cypress run --component"
   },
   "dependencies": {
     "clsx": "^2.0.0",
@@ -21,6 +27,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
+    "cypress": "^13.3.3",
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
     "postcss": "^8",
