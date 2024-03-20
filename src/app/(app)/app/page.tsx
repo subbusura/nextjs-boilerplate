@@ -47,7 +47,7 @@ const userNavigation = [
   { name: "Sign out", href: "#" },
 ];
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
@@ -91,7 +91,7 @@ export default function AppPage() {
                 id="inbox-select"
                 className="rounded-md border-0 bg-none pl-3 pr-8 text-base font-medium text-gray-900 focus:ring-2 focus:ring-indigo-600"
                 defaultValue={
-                  sidebarNavigation.find((item) => item.current).name
+                  sidebarNavigation.find((item) => item.current)?.name
                 }
               >
                 {sidebarNavigation.map((item) => (
@@ -183,7 +183,7 @@ export default function AppPage() {
                     <Menu.Items className="origin-top-right absolute z-30 right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <div className="py-1">
                         <Menu.Item>
-                          {({ active }) => (
+                          {({ active }: any) => (
                             <a
                               href="#"
                               className={classNames(
@@ -196,7 +196,7 @@ export default function AppPage() {
                           )}
                         </Menu.Item>
                         <Menu.Item>
-                          {({ active }) => (
+                          {({ active }: any) => (
                             <a
                               href="#"
                               className={classNames(
