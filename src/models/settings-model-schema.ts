@@ -20,7 +20,6 @@ interface ISetting extends Document {
 type SettingModel = Model<ISetting>;
 
 const SettingModelSchema = new Schema<ISetting, SettingModel>({
-  type: { type: Schema.Types.String },
   setting_category: { type: Schema.Types.String },
   setting_key: { type: Schema.Types.String },
   setting_value: { type: Schema.Types.Mixed },

@@ -2,7 +2,6 @@
 import { Popover, Transition } from "@headlessui/react";
 import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
-
 export default function Home() {
   return (
     <div className="relative bg-gray-50 overflow-hidden">

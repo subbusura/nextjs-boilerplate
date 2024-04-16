@@ -1,4 +1,6 @@
-export default function LoginPage() {
+import { withDbConnect } from "@/lib/withDbConnect";
+export const dynamic = "force-dynamic";
+async function LoginPage(props: any) {
   return (
     <>
       <div className="min-h-full flex">
@@ -198,3 +200,5 @@ export default function LoginPage() {
     </>
   );
 }
+
+export default withDbConnect(LoginPage);
