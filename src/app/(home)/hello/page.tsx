@@ -18,12 +18,12 @@ async function getData() {
 }
 
 export default async function Home(props: any) {
-  // const appStore = useApplication();
-  const session = await getServerSession(nextAuthOptions);
-  if (session == null) {
-    redirect("/api/auth/signin");
-  }
-  const data = await getData();
+  // // const appStore = useApplication();
+  // const session = await getServerSession(nextAuthOptions);
+  // if (session == null) {
+  //   redirect("/api/auth/signin");
+  // }
+  // const data = await getData();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">

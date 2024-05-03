@@ -29,4 +29,8 @@ export const nextAuthOptions = {
       },
     }),
   ],
+  pages: {
+    signIn: "/login",
+    error: "/error",
+  },
 };

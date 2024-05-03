@@ -201,4 +201,4 @@ async function LoginPage(props: any) {
   );
 }
 
-export default withDbConnect(LoginPage);
+export default LoginPage;
