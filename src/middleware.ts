@@ -1,6 +1,15 @@
 import { withAuth } from 'next-auth/middleware';
+import { NextResponse } from 'next/server';
 
-export default withAuth({
+export default withAuth(  function middleware(req) {
+  console.log(req.nextauth.token,req.nextUrl.pathname)
+  if (req.nextauth.token && 
+    req.nextUrl.pathname.startsWith('/login')
+  ) {
+    return NextResponse.redirect(new URL('/app', req.nextUrl))
+  }
+  return NextResponse.next()
+},{
   pages:{
    signIn: '/login',
   },
