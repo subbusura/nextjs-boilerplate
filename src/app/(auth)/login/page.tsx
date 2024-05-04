@@ -1,7 +1,15 @@
 export const dynamic = "force-dynamic";
-import LoginForm from "./LoginForm.client";
+import { nextAuthOptions } from "@/lib/next-auth-options";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import LoginForm from "./_components/LoginForm";
 
 async function LoginPage(props: any) {
+  const session = await getServerSession(nextAuthOptions);
+  if (session) {
+    redirect("/app");
+  }
+
   return (
     <>
       <div className="min-h-full flex">
@@ -10,7 +18,7 @@ async function LoginPage(props: any) {
             <div>
               <img
                 className="h-12 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                src="/assets/next.svg"
                 alt="Workflow"
               />
               <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
@@ -112,7 +120,7 @@ async function LoginPage(props: any) {
               </div>
 
               <div className="mt-6">
-                  <LoginForm />
+                <LoginForm />
               </div>
             </div>
           </div>

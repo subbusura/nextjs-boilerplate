@@ -1,19 +1,20 @@
-'use client'
-import React from "react"
-import {signIn} from "next-auth/react"
-const LoginForm = ()=>{
+"use client";
+import React from "react";
+import { signIn } from "next-auth/react";
+import Link from "next/link";
 
-    const formhandle = async (e:React.FormEvent<HTMLFormElement>)=>{
-        e.preventDefault()
-        const username =e.currentTarget.elements.namedItem("username").value
-        const password =e.currentTarget.elements.namedItem("password").value
+const LoginForm = () => {
+  const formhandle = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const username = "hello"; //e.currentTarget.elements.namedItem("username").value;
+    const password = "hello@123"; //e.currentTarget.elements.namedItem("password").value;
 
-        await signIn("credentials",{username:username,password})
-        console.log("Read Form Data",username,password)
-  }
+    await signIn("credentials", { username: username, password });
+    console.log("Read Form Data", username, password);
+  };
 
-    return (<form  className="space-y-6" onSubmit={formhandle}>
-   
+  return (
+    <form className="space-y-6" onSubmit={formhandle}>
       <div>
         <label
           htmlFor="email"
@@ -69,12 +70,13 @@ const LoginForm = ()=>{
         </div>
 
         <div className="text-sm">
-          <a
-            href="#"
+          <Link
+            href="/reset/password"
             className="font-medium text-indigo-600 hover:text-indigo-500"
           >
+            {" "}
             Forgot your password?
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -86,8 +88,8 @@ const LoginForm = ()=>{
           Sign in
         </button>
       </div>
-    </form>)
+    </form>
+  );
+};
 
-}
-
-export default LoginForm
+export default LoginForm;

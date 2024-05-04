@@ -13,10 +13,12 @@ async function ForgotPage(props: any) {
                 alt="Workflow"
               />
               <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
-              Reset your password
+                Reset your password
               </h2>
               <p className="mt-2 text-sm text-gray-600">
-              To reset your password, enter your email below and submit. An email will be sent to you with instructions about how to complete the process.
+                To reset your password, enter your email below and submit. An
+                email will be sent to you with instructions about how to
+                complete the process.
               </p>
             </div>
             <div className="mt-8">
@@ -40,7 +42,7 @@ async function ForgotPage(props: any) {
                       />
                     </div>
                   </div>
-        
+
                   <div>
                     <button
                       type="submit"
@@ -65,4 +67,4 @@ async function ForgotPage(props: any) {
     </>
   );
 }
-export default withDbConnect(ForgotPage);
+export default ForgotPage;

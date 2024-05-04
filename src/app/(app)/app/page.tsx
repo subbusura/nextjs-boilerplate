@@ -1,5 +1,5 @@
 "use client";
-import { Fragment, useState } from "react";
+import { Fragment, useCallback, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import { InboxIcon } from "@heroicons/react/20/solid";
 import {
@@ -14,6 +14,7 @@ import {
   UserCircleIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { signOut } from "next-auth/react";
 
 const user = {
   name: "Whitney Francis",
@@ -53,6 +54,10 @@ function classNames(...classes: string[]) {
 
 export default function AppPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleLogout = useCallback(async () => {
+    await signOut();
+  }, []);
 
   return (
     <>
@@ -199,6 +204,7 @@ export default function AppPage() {
                           {({ active }: any) => (
                             <a
                               href="#"
+                              onClick={handleLogout}
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-sm text-gray-700"
